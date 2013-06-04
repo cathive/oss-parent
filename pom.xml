@@ -115,12 +115,9 @@
                     <version>3.1</version>
                     <configuration>
                         <compilerId>javac</compilerId>
-                        <compilerVersion>1.7</compilerVersion>
                         <encoding>UTF-8</encoding>
                         <showDeprecation>true</showDeprecation>
                         <showWarnings>true</showWarnings>
-                        <source>1.7</source>
-                        <target>1.7</target>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -266,7 +263,7 @@
         <profile>
             <id>javafx</id>
             <activation>
-                <jdk>(,1.8]</jdk>
+                <jdk>(1.7,1.8]</jdk>
                 <file>
                     <exists>${javafx.runtime.jar}</exists>
                 </file>
@@ -278,11 +275,12 @@
                     <version>RELEASE</version>
                     <scope>system</scope>
                     <systemPath>${javafx.runtime.jar}</systemPath>
+                    <optional>true</optional>
                 </dependency>
             </dependencies>
         </profile>
         <profile>
-            <id>m2e</id>
+            <id>m2eclipse</id>
             <activation>
                 <property>
                     <name>m2e.version</name>
