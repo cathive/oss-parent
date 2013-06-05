@@ -41,9 +41,6 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <maven.compiler.useIncrementalCompilation>true</maven.compiler.useIncrementalCompilation>
-        <!-- Path definitions for JavaFX -->
-        <javafx.runtime.jar>${java.home}/lib/jfxrt.jar</javafx.runtime.jar>
-        <javafx.ant.jar>${java.home}/../lib/ant-javafx.jar</javafx.ant.jar>
         <!-- Netbeans platform hints -->
         <netbeans.hint.jdkPlatform>JDK_1.7</netbeans.hint.jdkPlatform>
         <!-- Jetty configuration -->
@@ -260,25 +257,6 @@
     </dependencyManagement>
 
     <profiles>
-        <profile>
-            <id>javafx</id>
-            <activation>
-                <jdk>(1.7,1.8]</jdk>
-                <file>
-                    <exists>${javafx.runtime.jar}</exists>
-                </file>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>com.oracle</groupId>
-                    <artifactId>javafx-runtime</artifactId>
-                    <version>RELEASE</version>
-                    <scope>system</scope>
-                    <systemPath>${javafx.runtime.jar}</systemPath>
-                    <optional>true</optional>
-                </dependency>
-            </dependencies>
-        </profile>
         <profile>
             <id>m2eclipse</id>
             <activation>
