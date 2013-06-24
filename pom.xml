@@ -51,8 +51,6 @@
         <bridj.version>0.6.2</bridj.version>
         <guava.version>14.0.1</guava.version>
         <guice.version>3.0</guice.version>
-        <jdo-api.version>3.0.1</jdo-api.version>
-        <jetty.version>9.0.0.v20130308</jetty.version>
         <jinput.version>2.0.5</jinput.version>
         <jogl.version>2.0-rc11</jogl.version>
         <testng.version>6.8</testng.version>
@@ -92,6 +90,11 @@
                     <version>0.6.3</version>
                 </plugin>
                 <plugin>
+                    <groupId>com.zenjava</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>1.5</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>2.3.7</version>
@@ -107,6 +110,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.4</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -182,6 +190,11 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>2.2.1</version>
                     <configuration>
@@ -230,11 +243,6 @@
                 <version>${bridj.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.jdo</groupId>
-                <artifactId>jdo-api</artifactId>
-                <version>${jdo-api.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>net.java.jinput</groupId>
                 <artifactId>jinput</artifactId>
                 <version>${jinput.version}</version>
@@ -243,16 +251,6 @@
                 <groupId>net.java.jinput</groupId>
                 <artifactId>jinput-platform</artifactId>
                 <version>${jinput.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-server</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-websocket</artifactId>
-                <version>${jetty.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jogamp.jogl</groupId>
