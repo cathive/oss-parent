@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.3.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd">
+    <bannerLeft>
+        <name>The Cat Hive Developers</name>
+        <alt>The Cat Hive Developers</alt>
+        <src>/images/banner-cathive.png</src>
+        <href>/index.html</href>
+    </bannerLeft>
+    <poweredBy>
+        <logo width="0" height="0" alt="" border="0"/>
+    </poweredBy>
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>${maven-fluido-skin.version}</version>
+    </skin>
+    <body>
+        <head>
+            <link href="@relativePath@/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+            <script type="text/javascript" src="@relativePath@/js/prettyprint.js" />
+        </head>
+        <breadcrumbs>
+            <item name="Cat Hive OSS Software" href="${project.url}" />
+        </breadcrumbs>
+        <menu ref="reports" />
+    </body>
+    <custom>
+        <fluidoSkin>
+            <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+            <topBarEnabled>false</topBarEnabled>
+            <navBarStyle>navbar-inverse</navBarStyle>
+            <sideBarEnabled>true</sideBarEnabled>
+        </fluidoSkin>
+    </custom>
+</project>

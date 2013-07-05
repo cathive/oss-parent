@@ -24,7 +24,7 @@
     <packaging>pom</packaging>
     <version>3-SNAPSHOT</version>
     <name>Cat Hive OSS Parent POM</name>
-    <description>Common definition for all the Cat Hive projects</description>
+    <description>Common definition for all the Cat Hive open source projects</description>
     <url>https://github.com/cathive/${project.artifactId}/</url>
     <inceptionYear>2013</inceptionYear>
 
@@ -35,19 +35,101 @@
     </parent>
 
     <properties>
-        <!-- Global Maven build configuration -->
+
+        <!-- ==== Global Maven build configuration ==== -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
-        <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <maven.compiler.useIncrementalCompilation>true</maven.compiler.useIncrementalCompilation>
+        <maven.site.deploy.skip>true</maven.site.deploy.skip>
+
         <!-- Netbeans platform hints -->
         <netbeans.hint.jdkPlatform>JDK_1.7</netbeans.hint.jdkPlatform>
+
         <!-- Jetty configuration -->
         <jetty.scanIntervalSeconds>5</jetty.scanIntervalSeconds>
-        <!-- Version definitions -->
+
+        <!-- ==== Github configuration ==== -->
+        <github.site.force>false</github.site.force>
+        <github.site.merge>false</github.site.merge>
+
+        <!-- ==== Plugins: Official maven plugins (Group ID: org.apache.maven.plugins) ==== -->
+        <maven-ant-plugin.version>2.3</maven-ant-plugin.version>
+        <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+        <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
+        <maven-changes-plugin.version>2.9</maven-changes-plugin.version>
+        <maven-checkstyle-plugin.version>2.10</maven-checkstyle-plugin.version>
+        <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
+        <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+        <maven-ear-plugin.version>2.8</maven-ear-plugin.version>
+        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+        <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
+        <maven-enforcer-plugin.version>1.3</maven-enforcer-plugin.version>
+        <maven-install-plugin.version>2.4</maven-install-plugin.version>
+        <maven-invoker-plugin.version>1.8</maven-invoker-plugin.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <maven-jarsigner-plugin.version>1.2</maven-jarsigner-plugin.version>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
+        <maven-pmd-plugin.version>3.0.1</maven-pmd-plugin.version>
+        <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
+        <maven-release-plugin.version>2.4.1</maven-release-plugin.version>
+        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven-shade-plugin.version>2.1</maven-shade-plugin.version>
+        <maven-site-plugin.version>3.3</maven-site-plugin.version>
+        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <maven-surefire-plugin.version>2.15</maven-surefire-plugin.version>
+        <maven-surefire-report-plugin.version>2.15</maven-surefire-report-plugin.version>
+        <maven-war-plugin.version>2.3</maven-war-plugin.version>
+
+        <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
+        <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+        <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
+        <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
+        <license-maven-plugin.version>1.5</license-maven-plugin.version>
+        <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
+        <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+        <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
+
+        <!-- ==== Plugins: Github plugins (Group ID: com.github.github) ==== -->
+        <com.github.github__site-maven-plugin__version>0.8</com.github.github__site-maven-plugin__version>
+
+        <!-- ==== Plugins: All other 3rd party plugins ==== -->
+        <android-maven-plugin.version>3.6.0</android-maven-plugin.version>
+        <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
+        <cordova-maven-plugin.version>3.0.0.20130604-M1</cordova-maven-plugin.version>
+        <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
+        <javafx-maven-plugin.version>1.5</javafx-maven-plugin.version>
+        <javascript-maven-plugin.version>1.0.12</javascript-maven-plugin.version>
+        <jsdoc3-maven-plugin.version>1.0.4</jsdoc3-maven-plugin.version>
+        <minify-maven-plugin.version>1.7</minify-maven-plugin.version>
+        <protobuf-maven-plugin.version>0.6.3</protobuf-maven-plugin.version>
+        <taglib-maven-plugin.version>2.4</taglib-maven-plugin.version>
+        <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
+
+        <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
+        <doxia-modules.version>1.4</doxia-modules.version>
+        <wagon-providers.version>2.4</wagon-providers.version>
+
+        <!-- ==== Plugins: Skins for the maven-site-plugin ==== -->
+        <maven-application-skin.version>1.0</maven-application-skin.version>
+        <maven-classic-skin.version>1.1</maven-classic-skin.version>
+        <maven-default-skin.version>1.1</maven-default-skin.version>
+        <maven-stylus-skin.version>1.5</maven-stylus-skin.version>
+        <maven-fluido-skin.version>1.3.0</maven-fluido-skin.version>
+
+        <!-- ==== Tattletale configuration (scan for duplicate dependencies) ==== -->
+        <tattletale-source-directory>${project.build.directory}/tattletale-source</tattletale-source-directory>
+        <tattletale-destination-directory>${project.build.directory}/site/tattletale</tattletale-destination-directory>
+
+        <!-- Dependencies: Some (common) version definitions-->
         <bridj.version>0.6.2</bridj.version>
         <guava.version>14.0.1</guava.version>
         <guice.version>3.0</guice.version>
@@ -78,76 +160,117 @@
         <connection>scm:git:https://github.com/cathive/${project.artifactId}.git</connection>
         <developerConnection>scm:git:git@github.com:cathive/${project.artifactId}.git</developerConnection>
         <url>https://github.com/cathive/${project.artifactId}/</url>
-        <tag>HEAD</tag>
+        <tag>master</tag>
     </scm>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <configuration>
+                    <message>Creating site for ${project.version}</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site-deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <plugins>
+                <!-- ==== Plugins: Official maven plugins (Group ID: org.apache.maven.plugins) ==== -->
                 <plugin>
-                    <groupId>com.github.igor-petruk.protobuf</groupId>
-                    <artifactId>protobuf-maven-plugin</artifactId>
-                    <version>0.6.3</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.zenjava</groupId>
-                    <artifactId>javafx-maven-plugin</artifactId>
-                    <version>1.5</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.3.7</version>
-                    <extensions>true</extensions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ant-plugin</artifactId>
+                    <version>${maven-ant-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-acr-plugin</artifactId>
-                    <version>1.0</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-archetype-plugin</artifactId>
-                    <version>2.2</version>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${maven-antrun-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>${maven-assembly-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changes-plugin</artifactId>
+                    <version>${maven-changes-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <compilerId>javac</compilerId>
-                        <showDeprecation>true</showDeprecation>
-                        <showWarnings>true</showWarnings>
+                        <compilerArgs>
+                            <arg>-XDignore.symbol.file</arg>
+                            <arg>-Xlint:unchecked</arg>
+                        </compilerArgs>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>${maven-dependency-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.7</version>
+                    <version>${maven-deploy-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
-                    <version>2.8</version>
+                    <version>${maven-ear-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>${maven-eclipse-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>${maven-ejb-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven-install-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-invoker-plugin</artifactId>
+                    <version>${maven-invoker-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>${maven-jar-plugin.version}</version>
                     <configuration>
                         <archive>
-                            <index>true</index>
                             <manifest>
                                 <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                                 <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
@@ -157,8 +280,13 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jarsigner-plugin</artifactId>
+                    <version>${maven-jarsigner-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.9</version>
+                    <version>${maven-javadoc-plugin.version}</version>
                     <executions>
                         <execution>
                             <goals>
@@ -169,34 +297,97 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pdf-plugin</artifactId>
-                    <version>1.2</version>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>${maven-jxr-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>${maven-plugin-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${maven-project-info-reports-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.4.1</version>
+                    <version>${maven-release-plugin.version}</version>
                     <configuration>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <goals>deploy</goals>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven-shade-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.3</version>
+                    <version>${maven-site-plugin.version}</version>
+                    <configuration>
+                        <chmod>false</chmod>
+                        <locales>en</locales>
+                        <validate>false</validate>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-docbook-simple</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-markdown</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-twiki</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-xhtml</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh</artifactId>
+                            <version>${wagon-providers.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh-external</artifactId>
+                            <version>${wagon-providers.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>attach-descriptor</id>
+                            <goals>
+                                <goal>attach-descriptor</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
+                    <version>${maven-source-plugin.version}</version>
                     <configuration>
                         <attach>true</attach>
                         <excludeResources>false</excludeResources>
@@ -213,8 +404,123 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>2.3</version>
+                    <version>${maven-war-plugin.version}</version>
+                </plugin>
+                <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${license-maven-plugin.version}</version>
+                    <configuration>
+                        <licenseMerges>
+                            <licenseMerge>BSD|BSD License|BSD style license|BSD-style|BSD style</licenseMerge>
+                            <licenseMerge>MIT|MIT License|The MIT License|The MIT License (MIT)</licenseMerge>
+                            <licenseMerge>Unknown|Unknown license</licenseMerge>
+                        </licenseMerges>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sql-maven-plugin</artifactId>
+                    <version>${sql-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>${taglist-maven-plugin.version}</version>
+                </plugin>
+                <!-- ==== Plugins: Github plugins (Group ID: com.github.github) ==== -->
+                <plugin>
+                    <groupId>com.github.github</groupId>
+                    <artifactId>site-maven-plugin</artifactId>
+                    <version>${com.github.github__site-maven-plugin__version}</version>
+                </plugin>
+                <!-- ==== Plugins: All other 3rd party plugins ==== -->
+                <plugin>
+                    <groupId>de.ailis.maven.plugins</groupId>
+                    <artifactId>javascript-maven-plugin</artifactId>
+                    <version>${javascript-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <incremental>true</incremental>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.agilejava.docbkx</groupId>
+                    <artifactId>docbkx-maven-plugin</artifactId>
+                    <version>${docbkx-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.igor-petruk.protobuf</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>${protobuf-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.phasebash</groupId>
+                    <artifactId>jsdoc3-maven-plugin</artifactId>
+                    <version>${jsdoc3-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>${android-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.samaxes.maven</groupId>
+                    <artifactId>minify-maven-plugin</artifactId>
+                    <version>${minify-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.zenjava</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>${javafx-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>net.sourceforge.maven-taglib</groupId>
+                    <artifactId>maven-taglib-plugin</artifactId>
+                    <version>${taglib-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${bundle-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.errai</groupId>
+                    <artifactId>cordova-maven-plugin</artifactId>
+                    <version>${cordova-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.tattletale</groupId>
+                    <artifactId>tattletale-maven</artifactId>
+                    <version>${tattletale-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -264,6 +570,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <site>
+            <id>ghPages</id>
+            <name>Cat hive Project Documentation Sites</name>
+            <url>scpexe://cathive.github.io/</url>
+        </site>
+    </distributionManagement>
 
     <profiles>
         <profile>
