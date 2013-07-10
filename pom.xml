@@ -163,6 +163,12 @@
         <!-- Java Native Access (JNA).
              This version definition changes the version of all JNA dependencies. -->
         <jna.version>4.0.0</jna.version>
+        <!-- JUnit
+             This version definition changes the version of JUnit that is being used. -->
+        <junit.version>4.11</junit.version>
+        <!-- Logback
+             This version definition changes the version of Logback to be included. -->
+        <logback.version>1.0.13</logback.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
@@ -798,6 +804,32 @@
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna-platform</artifactId>
                 <version>4.0.0</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== JUnit ==== -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Logback ==== -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-access</artifactId>
+                <version>${logback.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Simple Logging Facade For Java (SLF4J) ==== -->
