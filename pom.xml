@@ -954,7 +954,7 @@
     <distributionManagement>
         <site>
             <id>ghPages</id>
-            <name>Cat hive Project Documentation Sites</name>
+            <name>Cat Hive Project Documentation Sites</name>
             <url>scpexe://cathive.github.io/</url>
         </site>
     </distributionManagement>
