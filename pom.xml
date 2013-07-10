@@ -16,16 +16,18 @@
  limitations under the License.
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cathive</groupId>
     <artifactId>oss-parent</artifactId>
     <packaging>pom</packaging>
     <version>3-SNAPSHOT</version>
-    <name>Cat Hive OSS Parent POM</name>
-    <description>Common definition for all the Cat Hive open source projects</description>
-    <url>https://github.com/cathive/${project.artifactId}/</url>
+    <name>Cat Hive Open Source Software</name>
+    <description>Open Source Software created and published by The Cat Hive Developers</description>
+    <url>http://www.cathive.com/</url>
     <inceptionYear>2013</inceptionYear>
 
     <parent>
@@ -48,7 +50,7 @@
         <maven.site.deploy.skip>true</maven.site.deploy.skip>
 
         <!-- Netbeans platform hints -->
-        <netbeans.hint.jdkPlatform>JDK_1.7</netbeans.hint.jdkPlatform>
+        <netbeans.hint.jdkPlatform>JDK_${maven.compiler.compilerVersion}</netbeans.hint.jdkPlatform>
 
         <!-- Jetty configuration -->
         <jetty.scanIntervalSeconds>5</jetty.scanIntervalSeconds>
@@ -71,6 +73,7 @@
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
         <maven-enforcer-plugin.version>1.3</maven-enforcer-plugin.version>
+        <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
         <maven-install-plugin.version>2.4</maven-install-plugin.version>
         <maven-invoker-plugin.version>1.8</maven-invoker-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
@@ -87,7 +90,7 @@
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.15</maven-surefire-plugin.version>
         <maven-surefire-report-plugin.version>2.15</maven-surefire-report-plugin.version>
-        <maven-war-plugin.version>2.3</maven-war-plugin.version>
+        <maven-war-plugin.version>2.4</maven-war-plugin.version>
 
         <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
@@ -106,7 +109,7 @@
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20130604-M1</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
-        <javafx-maven-plugin.version>1.5</javafx-maven-plugin.version>
+        <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
         <javascript-maven-plugin.version>1.0.12</javascript-maven-plugin.version>
         <jsdoc3-maven-plugin.version>1.0.4</jsdoc3-maven-plugin.version>
         <minify-maven-plugin.version>1.7</minify-maven-plugin.version>
@@ -129,17 +132,52 @@
         <tattletale-source-directory>${project.build.directory}/tattletale-source</tattletale-source-directory>
         <tattletale-destination-directory>${project.build.directory}/site/tattletale</tattletale-destination-directory>
 
-        <!-- Dependencies: Some (common) version definitions-->
+        <!-- ==== Version configuration for common frameworks and libraries ==== -->
+        <!-- bridj.
+             This version definition controls the version of brdij that is being used. -->
         <bridj.version>0.6.2</bridj.version>
+        <!-- Apache CXF.
+             This version definition changes the version of the plugin being used as well as the versions of all
+             components that are part of CXF. -->
+        <cxf.version>2.7.5</cxf.version>
+        <!-- Google Commons (Guava)
+          This version definition chnages the Guava version being used. -->
         <guava.version>14.0.1</guava.version>
+        <!-- Google Guice IoC Container and add-ons
+             This version definition changes the version of Google Guice as well as the version of
+             all of the official additions that have been made available. -->
         <guice.version>3.0</guice.version>
+        <!-- Jetty Servlet Container.
+             This version definition changes the version of the jetty-maven-plugin as well as the versions of
+             all Jetty components and dependencies. -->
+        <jetty.version>9.0.4.v20130625</jetty.version>
+        <!-- Java™ Binding for the OpenAL® API (JOAL)
+             This version definition changes the version of JOAL that is being used. -->
+        <joal.version>2.0.2-rc12</joal.version>
+        <!-- Java™ Binding for the OpenGL® API (JOGL)
+             This version definition changes the version of JOGL that is being used. -->
+        <jogl.version>2.0.2-rc12</jogl.version>
+        <!-- JInput.
+             This version definition changes the versions of all JInput components -->
         <jinput.version>2.0.5</jinput.version>
-        <jogl.version>2.0-rc11</jogl.version>
-        <testng.version>6.8</testng.version>
+        <!-- Java Native Access (JNA).
+             This version definition changes the version of all JNA dependencies. -->
+        <jna.version>4.0.0</jna.version>
+        <!-- Simple Logging Facade For Java (SLF4J).
+             This version definition changes the version of the API of SLF4J being used as well as the version of all
+             the sources and sinks, to make sure that everything stays compatible. -->
+        <slf4j.version>1.7.5</slf4j.version>
+        <!-- Spring Framework and Libraries.
+             This version definition changes the version of all our Spring components. -->
+        <spring.version>3.2.3.RELEASE</spring.version>
+        <spring-security.version>3.1.4.RELEASE</spring-security.version>
+        <!-- TestNG
+             This version definition changes the currently used version of TestNG -->
+        <testng.version>6.8.5</testng.version>
     </properties>
 
     <prerequisites>
-        <maven>3.0.0</maven>
+        <maven>3.0.3</maven>
     </prerequisites>
 
     <licenses>
@@ -157,9 +195,9 @@
     </organization>
 
     <scm>
-        <connection>scm:git:https://github.com/cathive/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:git@github.com:cathive/${project.artifactId}.git</developerConnection>
-        <url>https://github.com/cathive/${project.artifactId}/</url>
+        <connection>scm:git:https://github.com/cathive/oss-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:cathive/oss-parent.git</developerConnection>
+        <url>https://github.com/cathive/oss-parent/</url>
         <tag>master</tag>
     </scm>
 
@@ -254,6 +292,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${maven-enforcer-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -461,6 +504,28 @@
                     <artifactId>site-maven-plugin</artifactId>
                     <version>${com.github.github__site-maven-plugin__version}</version>
                 </plugin>
+                <!-- ==== Apache CXF maven plugins ==== -->
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>${cxf.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-java2ws-plugin</artifactId>
+                    <version>${cxf.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-wsdl-validator-plugin</artifactId>
+                    <version>${cxf.version}</version>
+                </plugin>
+                <!-- ==== Jetty Maven plugin ==== -->
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${jetty.version}</version>
+                </plugin>
                 <!-- ==== Plugins: All other 3rd party plugins ==== -->
                 <plugin>
                     <groupId>de.ailis.maven.plugins</groupId>
@@ -525,48 +590,363 @@
             </plugins>
         </pluginManagement>
     </build>
-
     <dependencyManagement>
         <dependencies>
+            <!-- ==== bridj ==== -->
             <dependency>
-                <groupId>com.google.inject</groupId>
-                <artifactId>guice</artifactId>
-                <version>${guice.version}</version>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>bridj</artifactId>
+                <version>${bridj.version}</version>
+                <type>jar</type>
             </dependency>
+            <!-- ==== Apache CXF ==== -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-tools-common</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-js</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-simple</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-security</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>${cxf.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Google Commons (Guava) ==== -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-gwt</artifactId>
+                <version>${guava.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Google Guice ==== -->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- Guice extensions -->
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assistedinject</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-grapher</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-jndi</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-jmx</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-persist</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-servlet</artifactId>
                 <version>${guice.version}</version>
+                <type>jar</type>
             </dependency>
             <dependency>
-                <groupId>com.nativelibs4java</groupId>
-                <artifactId>bridj</artifactId>
-                <version>${bridj.version}</version>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-spring</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
             </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-throwingproviders</artifactId>
+                <version>${guice.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Jetty ==== -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-ajp</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-annotations</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-client</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-websocket</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Java™ Binding for the OpenAL® API (JOAL) ==== -->
+            <dependency>
+                <groupId>org.jogamp.joal</groupId>
+                <artifactId>joal-all</artifactId>
+                <version>${joal.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Java™ Binding for the OpenGL® API (JOGL) ==== -->
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== JInput ==== -->
             <dependency>
                 <groupId>net.java.jinput</groupId>
                 <artifactId>jinput</artifactId>
                 <version>${jinput.version}</version>
+                <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>net.java.jinput</groupId>
                 <artifactId>jinput-platform</artifactId>
                 <version>${jinput.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Java Native Access (JNA) ==== -->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>4.0.0</version>
+                <type>jar</type>
             </dependency>
             <dependency>
-                <groupId>org.jogamp.jogl</groupId>
-                <artifactId>jogl-all</artifactId>
-                <version>${jogl.version}</version>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna-platform</artifactId>
+                <version>4.0.0</version>
+                <type>jar</type>
             </dependency>
+            <!-- ==== Simple Logging Facade For Java (SLF4J) ==== -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jcl</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Spring Framework ==== -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-struts</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- spring-security -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== TestNG ==== -->
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>${testng.version}</version>
+                <type>jar</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -597,6 +977,41 @@
                             <configuration>
                                 <lifecycleMappingMetadata>
                                     <pluginExecutions>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>de.ailis.maven.plugins</groupId>
+                                                <artifactId>javascript-maven-plugin</artifactId>
+                                                <versionRange>[1.0.0,)</versionRange>
+                                                <goals>
+                                                    <goal>compile</goal>
+                                                    <goal>resources</goal>
+                                                    <goal>demo</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute>
+                                                    <runOnConfiguration>false</runOnConfiguration>
+                                                    <runOnIncremental>true</runOnIncremental>
+                                                </execute>
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.apache.maven.plugins</groupId>
+                                                <artifactId>maven-dependency-plugin</artifactId>
+                                                <versionRange>[1.0,)</versionRange>
+                                                <goals>
+                                                    <goal>copy-dependencies</goal>
+                                                    <goal>unpack</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute>
+                                                    <runOnConfiguration>false</runOnConfiguration>
+                                                    <runOnIncremental>false</runOnIncremental>
+                                                </execute>
+                                            </action>
+                                        </pluginExecution>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
                                                 <groupId>org.apache.maven.plugins</groupId>

@@ -28,6 +28,15 @@
     </body>
     <custom>
         <fluidoSkin>
+            <gitHub>
+                <projectId>cathive/oss-parent</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>black</ribbonColor>
+            </gitHub>
+            <googlePlusOne/>
+            <googleSearch>
+                <sitesearch/>
+            </googleSearch>
             <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
             <topBarEnabled>false</topBarEnabled>
             <navBarStyle>navbar-inverse</navBarStyle>
