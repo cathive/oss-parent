@@ -27,7 +27,7 @@
     <version>3-SNAPSHOT</version>
     <name>Cat Hive Open Source Software</name>
     <description>Open Source Software created and published by The Cat Hive Developers</description>
-    <url>http://www.cathive.com/</url>
+    <url>http://www.github.com/cathive/oss-parent/</url>
     <inceptionYear>2013</inceptionYear>
 
     <parent>
