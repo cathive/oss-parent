@@ -80,6 +80,7 @@
         <maven-jarsigner-plugin.version>1.2</maven-jarsigner-plugin.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-pdf-plugin.version>1.2</maven-pdf-plugin.version>
         <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
         <maven-pmd-plugin.version>3.0.1</maven-pmd-plugin.version>
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
@@ -94,12 +95,15 @@
 
         <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+        <clirr-maven-plugin.version>2.5</clirr-maven-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
         <license-maven-plugin.version>1.5</license-maven-plugin.version>
+        <native-maven-plugin.version>1.0-alpha-7</native-maven-plugin.version>
         <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
+        <xml-maven-plugin.version>1.0</xml-maven-plugin.version>
 
         <!-- ==== Plugins: Github plugins (Group ID: com.github.github) ==== -->
         <com.github.github__site-maven-plugin__version>0.8</com.github.github__site-maven-plugin__version>
@@ -116,6 +120,7 @@
         <protobuf-maven-plugin.version>0.6.3</protobuf-maven-plugin.version>
         <taglib-maven-plugin.version>2.4</taglib-maven-plugin.version>
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
+        <tomcat-maven-plugin.version>2.1</tomcat-maven-plugin.version>
 
         <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
         <doxia-modules.version>1.4</doxia-modules.version>
@@ -134,7 +139,7 @@
 
         <!-- ==== Version configuration for common frameworks and libraries ==== -->
         <!-- bridj.
-             This version definition controls the version of brdij that is being used. -->
+             This version definition controls the version of bridj that is being used. -->
         <bridj.version>0.6.2</bridj.version>
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
@@ -180,6 +185,10 @@
         <!-- TestNG
              This version definition changes the currently used version of TestNG -->
         <testng.version>6.8.5</testng.version>
+        <!-- Apache Tomcat
+             Version definition of the Apache Tomcat app server to be used. -->
+        <tomcat.version>7.0.42</tomcat.version>
+
     </properties>
 
     <prerequisites>
@@ -351,6 +360,23 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pdf-plugin</artifactId>
+                    <version>${maven-pdf-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-fo</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-itext</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
                     <version>${maven-plugin-plugin.version}</version>
                 </plugin>
@@ -469,6 +495,11 @@
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>clirr-maven-plugin</artifactId>
+                    <version>${clirr-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>${exec-maven-plugin.version}</version>
                 </plugin>
@@ -484,10 +515,20 @@
                     <configuration>
                         <licenseMerges>
                             <licenseMerge>BSD|BSD License|BSD style license|BSD-style|BSD style</licenseMerge>
+                            <licenseMerge>CDDL|Common Development and Distribution License</licenseMerge>
+                            <licenseMerge>EPL|Eclipse Public License</licenseMerge>
+                            <licenseMerge>GPLv2|GNU General Public License Version 2|GNU General Public License 2</licenseMerge>
+                            <licenseMerge>GPLv3|GNU General Public License Version 3|GNU General Public License 3</licenseMerge>
                             <licenseMerge>MIT|MIT License|The MIT License|The MIT License (MIT)</licenseMerge>
                             <licenseMerge>Unknown|Unknown license</licenseMerge>
                         </licenseMerges>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>native-maven-plugin</artifactId>
+                    <extensions>true</extensions>
+                    <version>${native-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -503,6 +544,11 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>taglist-maven-plugin</artifactId>
                     <version>${taglist-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>xml-maven-plugin</artifactId>
+                    <version>${xml-maven-plugin.version}</version>
                 </plugin>
                 <!-- ==== Plugins: Github plugins (Group ID: com.github.github) ==== -->
                 <plugin>
@@ -526,6 +572,99 @@
                     <artifactId>cxf-wsdl-validator-plugin</artifactId>
                     <version>${cxf.version}</version>
                 </plugin>
+                <!-- ==== Apache Tomcat plugins ==== -->
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat-maven-plugin</artifactId>
+                    <version>${tomcat-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat6-maven-plugin</artifactId>
+                    <version>${tomcat-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>${tomcat-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-annotations-api</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-api</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-catalina</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-catalina-ant</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-catalina-ha</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-dbcp</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-el-api</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-servlet-api</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-tribes</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-jasper</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-jasper-el</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-jdbc</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-jsp-api</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-util</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat-juli</artifactId>
+                            <version>${tomcat.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
                 <!-- ==== Jetty Maven plugin ==== -->
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
@@ -546,6 +685,12 @@
                     <groupId>com.agilejava.docbkx</groupId>
                     <artifactId>docbkx-maven-plugin</artifactId>
                     <version>${docbkx-maven-plugin.version}</version>
+                    <configuration>
+                        <useExtensions>true</useExtensions>
+                        <useSvg>true</useSvg>
+                        <xepExtensions>true</xepExtensions>
+                        <xincludeSupported>true</xincludeSupported>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.github.igor-petruk.protobuf</groupId>
@@ -726,12 +871,6 @@
             <!-- ==== Jetty ==== -->
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-ajp</artifactId>
-                <version>${jetty.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-annotations</artifactId>
                 <version>${jetty.version}</version>
                 <type>jar</type>
@@ -760,16 +899,47 @@
                 <version>${jetty.version}</version>
                 <type>jar</type>
             </dependency>
+            <!-- WebSocket dependencies -->
             <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-websocket</artifactId>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-api</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-client</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-common</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-server</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.websocket</groupId>
+                <artifactId>websocket-servlet</artifactId>
                 <version>${jetty.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Java™ Binding for the OpenAL® API (JOAL) ==== -->
             <dependency>
                 <groupId>org.jogamp.joal</groupId>
-                <artifactId>joal-all</artifactId>
+                <artifactId>joal</artifactId>
+                <version>${joal.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.joal</groupId>
+                <artifactId>joal-main</artifactId>
                 <version>${joal.version}</version>
                 <type>jar</type>
             </dependency>
@@ -777,6 +947,42 @@
             <dependency>
                 <groupId>org.jogamp.jogl</groupId>
                 <artifactId>jogl-all</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-android</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-main</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-mobile</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-mobile-main</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-noawt</artifactId>
+                <version>${jogl.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jogamp.jogl</groupId>
+                <artifactId>jogl-all-noawt-main</artifactId>
                 <version>${jogl.version}</version>
                 <type>jar</type>
             </dependency>
@@ -978,6 +1184,113 @@
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>${testng.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Apache Tomcat ==== -->
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/annotations-api.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-annotations-api</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/catalina-api.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-api</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/catalina.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/catalina-ant.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina-ant</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/catalina-ha.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina-ha</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/tomcat-dbcp.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-dbcp</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/el-api.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-el-api</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/servlet-api.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-servlet-api</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/catalina-tribes.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-tribes</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/jasper.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jasper</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/jasper-el.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jasper-el</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/tomcat-jdbc.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jdbc</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/jsp-api.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jsp-api</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <!-- ${TOMCAT_HOME}/lib/tomcat-util.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-util</artifactId>
+                <version>${tomcat.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- Special dependency that has to be installed separately. -->
+            <dependency>
+                <!-- ${TOMCAT_HOME}/bin/tomcat-juli.jar -->
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-juli</artifactId>
+                <version>${tomcat.version}</version>
                 <type>jar</type>
             </dependency>
         </dependencies>
