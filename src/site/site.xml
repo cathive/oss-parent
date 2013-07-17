@@ -19,7 +19,7 @@
     <body>
         <head>
             <link href="@relativePath@/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-            <script type="text/javascript" src="@relativePath@/js/prettyprint.js" />
+            <script type="text/javascript" src="@relativePath@/js/prettyprint.js"></script>
         </head>
         <breadcrumbs>
             <item name="Cat Hive OSS Software" href="${project.url}" />
