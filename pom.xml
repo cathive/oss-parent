@@ -191,10 +191,6 @@
 
     </properties>
 
-    <prerequisites>
-        <maven>3.0.3</maven>
-    </prerequisites>
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -209,12 +205,21 @@
         <url>http://www.cathive.com/</url>
     </organization>
 
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/cathive/oss-parent</url>
+    </ciManagement>
+
     <scm>
         <connection>scm:git:https://github.com/cathive/oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:cathive/oss-parent.git</developerConnection>
         <url>https://github.com/cathive/oss-parent/</url>
         <tag>master</tag>
     </scm>
+
+    <prerequisites>
+        <maven>3.0.3</maven>
+    </prerequisites>
 
     <build>
         <plugins>
@@ -1342,6 +1347,22 @@
                                         </pluginExecution>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
+                                                <groupId>com.samaxes.maven</groupId>
+                                                <artifactId>minify-maven-plugin</artifactId>
+                                                <versionRange>[1.7,)</versionRange>
+                                                <goals>
+                                                    <goal>minify</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute>
+                                                    <runOnConfiguration>false</runOnConfiguration>
+                                                    <runOnIncremental>false</runOnIncremental>
+                                                </execute>
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
                                                 <groupId>org.apache.maven.plugins</groupId>
                                                 <artifactId>maven-dependency-plugin</artifactId>
                                                 <versionRange>[1.0,)</versionRange>
@@ -1368,6 +1389,7 @@
                                             </pluginExecutionFilter>
                                             <action>
                                                 <execute>
+                                                    <runOnConfiguration>false</runOnConfiguration>
                                                     <runOnIncremental>false</runOnIncremental>
                                                 </execute>
                                             </action>
