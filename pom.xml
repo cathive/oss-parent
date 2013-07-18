@@ -1322,7 +1322,7 @@
         <profile>
             <id>jdk7</id>
             <activation>
-                <jdk>[1.7.0.06,1.8)</jdk>
+                <jdk>[1.7,1.8)</jdk>
                 <property>
                     <name>sun.boot.class.path</name>
                 </property>
