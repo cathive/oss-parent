@@ -74,6 +74,7 @@
         <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
         <maven-enforcer-plugin.version>1.3</maven-enforcer-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
+        <maven-help-plugin.version>2.2</maven-help-plugin.version>
         <maven-install-plugin.version>2.4</maven-install-plugin.version>
         <maven-invoker-plugin.version>1.8</maven-invoker-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
@@ -315,18 +316,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${maven-enforcer-plugin.version}</version>
-                    <configuration>
-                        <rules>
-                            <requireJavaVersion>
-                                <version>[1.7.0-06,)</version>
-                            </requireJavaVersion>
-                        </rules>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-help-plugin</artifactId>
+                    <version>${maven-help-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1324,6 +1323,9 @@
             <id>jdk7</id>
             <activation>
                 <jdk>[1.7.0.06,1.8)</jdk>
+                <property>
+                    <name>sun.boot.class.path</name>
+                </property>
             </activation>
             <build>
                 <plugins>
@@ -1334,6 +1336,17 @@
                             <compilerArguments>
                                 <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
                             </compilerArguments>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[1.7.0-06,)</version>
+                                </requireJavaVersion>
+                            </rules>
                         </configuration>
                     </plugin>
                 </plugins>
