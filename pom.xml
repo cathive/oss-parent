@@ -72,7 +72,7 @@
         <maven-ear-plugin.version>2.8</maven-ear-plugin.version>
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
-        <maven-enforcer-plugin.version>1.3</maven-enforcer-plugin.version>
+        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
         <maven-help-plugin.version>2.2</maven-help-plugin.version>
         <maven-install-plugin.version>2.4</maven-install-plugin.version>
@@ -146,7 +146,7 @@
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
-        <cxf.version>2.7.5</cxf.version>
+        <cxf.version>2.7.6</cxf.version>
         <!-- Google Commons (Guava)
           This version definition chnages the Guava version being used. -->
         <guava.version>14.0.1</guava.version>
@@ -154,16 +154,23 @@
              This version definition changes the version of Google Guice as well as the version of
              all of the official additions that have been made available. -->
         <guice.version>3.0</guice.version>
+        <!-- JavaEE configuration
+             This version definition changes the version of JavaEE dependencies to be used
+             (can be either 6.0 or 7.0). -->
+        <javaee.version>7.0</javaee.version>
         <!-- Jetty Servlet Container.
              This version definition changes the version of the jetty-maven-plugin as well as the versions of
              all Jetty components and dependencies. -->
         <jetty.version>9.0.4.v20130625</jetty.version>
+        <!-- JGit (http://eclipse.org/jgit/)
+             Version definition for JGit core and dependedant libraries-->
+        <jgit.version>3.0.0.201306101825-r</jgit.version>
         <!-- Java™ Binding for the OpenAL® API (JOAL)
              This version definition changes the version of JOAL that is being used. -->
-        <joal.version>2.0.2-rc12</joal.version>
+        <joal.version>2.0.2</joal.version>
         <!-- Java™ Binding for the OpenGL® API (JOGL)
              This version definition changes the version of JOGL that is being used. -->
-        <jogl.version>2.0.2-rc12</jogl.version>
+        <jogl.version>2.0.2</jogl.version>
         <!-- JInput.
              This version definition changes the versions of all JInput components -->
         <jinput.version>2.0.5</jinput.version>
@@ -891,6 +898,19 @@
                 <version>${guice.version}</version>
                 <type>jar</type>
             </dependency>
+            <!-- ==== JavaEE ==== -->
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-web-api</artifactId>
+                <version>${javaee.version}</version>
+                <type>jar</type>
+            </dependency>
             <!-- ==== Jetty ==== -->
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
@@ -951,6 +971,43 @@
                 <groupId>org.eclipse.jetty.websocket</groupId>
                 <artifactId>websocket-servlet</artifactId>
                 <version>${jetty.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== JGit ==== -->
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit</artifactId>
+                <version>${jgit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit.console</artifactId>
+                <version>${jgit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit.http.server</artifactId>
+                <version>${jgit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit.java7</artifactId>
+                <version>${jgit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit.pgm</artifactId>
+                <version>${jgit.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit.ui</artifactId>
+                <version>${jgit.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Java™ Binding for the OpenAL® API (JOAL) ==== -->
