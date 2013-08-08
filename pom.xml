@@ -62,6 +62,7 @@
         <!-- ==== Plugins: Official maven plugins (Group ID: org.apache.maven.plugins) ==== -->
         <maven-ant-plugin.version>2.3</maven-ant-plugin.version>
         <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+        <maven-archetype-plugin.version>2.2</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
         <maven-changes-plugin.version>2.9</maven-changes-plugin.version>
         <maven-checkstyle-plugin.version>2.10</maven-checkstyle-plugin.version>
@@ -111,15 +112,17 @@
         <com.github.github__site-maven-plugin__version>0.8</com.github.github__site-maven-plugin__version>
 
         <!-- ==== Plugins: All other 3rd party plugins ==== -->
-        <android-maven-plugin.version>3.6.0</android-maven-plugin.version>
+        <android-maven-plugin.version>3.6.1</android-maven-plugin.version>
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20130604-M1</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
         <javascript-maven-plugin.version>1.0.12</javascript-maven-plugin.version>
-        <jsdoc3-maven-plugin.version>1.0.4</jsdoc3-maven-plugin.version>
+        <jsdoc3-maven-plugin.version>1.0.5</jsdoc3-maven-plugin.version>
+        <lesscss-maven-plugin.version>1.3.3</lesscss-maven-plugin.version>
         <minify-maven-plugin.version>1.7</minify-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.3</protobuf-maven-plugin.version>
+        <sass-maven-plugin.version>1.1.1</sass-maven-plugin.version>
         <taglib-maven-plugin.version>2.4</taglib-maven-plugin.version>
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
         <tomcat-maven-plugin.version>2.1</tomcat-maven-plugin.version>
@@ -263,6 +266,11 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>${maven-archetype-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${maven-assembly-plugin.version}</version>
                 </plugin>
@@ -390,12 +398,32 @@
                     <dependencies>
                         <dependency>
                             <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-docbook-simple</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
                             <artifactId>doxia-module-fo</artifactId>
                             <version>${doxia-modules.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>org.apache.maven.doxia</groupId>
                             <artifactId>doxia-module-itext</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-markdown</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-twiki</artifactId>
+                            <version>${doxia-modules.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-xhtml</artifactId>
                             <version>${doxia-modules.version}</version>
                         </dependency>
                     </dependencies>
@@ -728,9 +756,19 @@
                     <version>${protobuf-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.jasig.maven</groupId>
+                    <artifactId>sass-maven-plugin</artifactId>
+                    <version>${sass-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>com.github.phasebash</groupId>
                     <artifactId>jsdoc3-maven-plugin</artifactId>
                     <version>${jsdoc3-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.lesscss</groupId>
+                    <artifactId>lesscss-maven-plugin</artifactId>
+                    <version>${lesscss-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
