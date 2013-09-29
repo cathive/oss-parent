@@ -68,7 +68,7 @@
         <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
-        <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+        <maven-deploy-plugin.version>2.8</maven-deploy-plugin.version>
         <maven-ear-plugin.version>2.8</maven-ear-plugin.version>
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
@@ -98,7 +98,7 @@
 
         <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
-        <clirr-maven-plugin.version>2.5</clirr-maven-plugin.version>
+        <clirr-maven-plugin.version>2.6</clirr-maven-plugin.version>
         <ditaot-maven-plugin.version>1.0</ditaot-maven-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
@@ -113,7 +113,7 @@
         <com.github.github__site-maven-plugin__version>0.8</com.github.github__site-maven-plugin__version>
 
         <!-- ==== Plugins: All other 3rd party plugins ==== -->
-        <android-maven-plugin.version>3.6.1</android-maven-plugin.version>
+        <android-maven-plugin.version>3.7.0</android-maven-plugin.version>
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20130604-M1</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
@@ -151,7 +151,7 @@
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
-        <cxf.version>2.7.6</cxf.version>
+        <cxf.version>2.7.7</cxf.version>
         <!-- Google Commons (Guava)
           This version definition chnages the Guava version being used. -->
         <guava.version>15.0</guava.version>
@@ -232,7 +232,7 @@
     </scm>
 
     <prerequisites>
-        <maven>3.0.3</maven>
+        <maven>3.0.4</maven>
     </prerequisites>
 
     <build>
