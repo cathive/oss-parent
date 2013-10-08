@@ -1539,6 +1539,20 @@
             <build>
                 <pluginManagement>
                     <plugins>
+                        <!--
+                          This configuration makes sure that the m2e Eclipse-maven-compiler-plugin mapping
+                          works flawlessly. We use another compilerId for all other environments to make
+                          sure that the javac-error-prone features are being used.
+                          For Eclipse it doesn't make too much sense, since it uses it's own compiler (ECJ)
+                          and complains loudly about defunct lifecycle-mappings if we change the compilerId.
+                          -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <compilerId>javac</compilerId>
+                            </configuration>
+                        </plugin>
                         <plugin>
                             <groupId>org.eclipse.m2e</groupId>
                             <artifactId>lifecycle-mapping</artifactId>
