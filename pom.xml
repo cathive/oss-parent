@@ -122,6 +122,7 @@
         <jaxws-maven-plugin.version>2.3</jaxws-maven-plugin.version>
         <jsdoc3-maven-plugin.version>1.0.5</jsdoc3-maven-plugin.version>
         <lesscss-maven-plugin.version>1.3.3.1</lesscss-maven-plugin.version>
+        <lombok-maven-plugin.version>0.12.0.0</lombok-maven-plugin.version>
         <minify-maven-plugin.version>1.7.2</minify-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.3</protobuf-maven-plugin.version>
         <sass-maven-plugin.version>1.1.1</sass-maven-plugin.version>
@@ -188,6 +189,9 @@
         <!-- Logback
              This version definition changes the version of Logback to be included. -->
         <logback.version>1.0.13</logback.version>
+        <!-- Lombok
+             This version definition changes the version of Lombok to be used. -->
+        <lombok.version>0.12.0</lombok.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
@@ -794,10 +798,15 @@
                     <version>${lesscss-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>${lombok-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-		    <version>${android-maven-plugin.version}</version>
-		    <extensions>true</extensions>
+                    <version>${android-maven-plugin.version}</version>
+                    <extensions>true</extensions>
                 </plugin>
                 <plugin>
                     <groupId>com.samaxes.maven</groupId>
@@ -1178,6 +1187,19 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Lombok ==== -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-utils</artifactId>
+                <version>${lombok.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Simple Logging Facade For Java (SLF4J) ==== -->
