@@ -130,6 +130,10 @@
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
         <tomcat-maven-plugin.version>2.1</tomcat-maven-plugin.version>
 
+        <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
+        <plexus-compiler-javac.version>2.3</plexus-compiler-javac.version>
+        <plexus-compiler-javac-errorprone.version>2.3</plexus-compiler-javac-errorprone.version>
+
         <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
         <doxia-modules.version>1.4</doxia-modules.version>
         <wagon-providers.version>2.4</wagon-providers.version>
@@ -309,14 +313,28 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                        <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
                         <compilerArgs>
                             <arg>-XDignore.symbol.file</arg>
                             <arg>-Xlint:unchecked</arg>
                         </compilerArgs>
+                        <compilerId>javac-with-errorprone</compilerId>
+                        <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-compiler-javac</artifactId>
+                            <version>${plexus-compiler-javac.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-compiler-javac-errorprone</artifactId>
+                            <version>${plexus-compiler-javac-errorprone.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
