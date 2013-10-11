@@ -117,6 +117,7 @@
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20130604-M1</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
+        <eclipselink-staticweave-maven-plugin.version>1.0.4</eclipselink-staticweave-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
         <javascript-maven-plugin.version>1.0.13</javascript-maven-plugin.version>
         <jaxws-maven-plugin.version>2.3</jaxws-maven-plugin.version>
@@ -157,6 +158,9 @@
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
         <cxf.version>2.7.7</cxf.version>
+        <!-- EclipseLink JPA Provider
+             This version definition changes the version of EclipseLink being used. -->
+        <eclipselink.version>2.5.1</eclipselink.version>
         <!-- Google Commons (Guava)
           This version definition chnages the Guava version being used. -->
         <guava.version>15.0</guava.version>
@@ -177,10 +181,10 @@
         <jgit.version>3.0.0.201306101825-r</jgit.version>
         <!-- Java™ Binding for the OpenAL® API (JOAL)
              This version definition changes the version of JOAL that is being used. -->
-        <joal.version>2.0.2</joal.version>
+        <joal.version>2.1.0</joal.version>
         <!-- Java™ Binding for the OpenGL® API (JOGL)
              This version definition changes the version of JOGL that is being used. -->
-        <jogl.version>2.0.2</jogl.version>
+        <jogl.version>2.1.0</jogl.version>
         <!-- JInput.
              This version definition changes the versions of all JInput components -->
         <jinput.version>2.0.5</jinput.version>
@@ -195,7 +199,7 @@
         <logback.version>1.0.13</logback.version>
         <!-- Lombok
              This version definition changes the version of Lombok to be used. -->
-        <lombok.version>0.12.0</lombok.version>
+        <lombok.version>1.12.2</lombok.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
@@ -771,6 +775,18 @@
                 </plugin>
                 <!-- ==== Plugins: All other 3rd party plugins ==== -->
                 <plugin>
+                    <groupId>au.com.alderaan</groupId>
+                    <artifactId>eclipselink-staticweave-maven-plugin</artifactId>
+                    <version>${eclipselink-staticweave-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.eclipse.persistence</groupId>
+                            <artifactId>eclipselink</artifactId>
+                            <version>${eclipselink.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
                     <groupId>de.ailis.maven.plugins</groupId>
                     <artifactId>javascript-maven-plugin</artifactId>
                     <version>${javascript-maven-plugin.version}</version>
@@ -911,6 +927,87 @@
                 <artifactId>cxf-rt-transports-http</artifactId>
                 <version>${cxf.version}</version>
                 <type>jar</type>
+            </dependency>
+            <!-- ==== EclipseLink ==== -->
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.antlr</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.asm</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.core</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.dbws</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.dbws.builder</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa.jpql</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpars</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.moxy</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.nosql</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.oracle</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.oracle.nosql</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.oracleddlparser</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.sdo</artifactId>
+                <version>${eclipselink.version}</version>
             </dependency>
             <!-- ==== Google Commons (Guava) ==== -->
             <dependency>
