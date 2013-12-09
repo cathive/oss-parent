@@ -69,7 +69,7 @@
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.1</maven-deploy-plugin.version>
-        <maven-ear-plugin.version>2.8</maven-ear-plugin.version>
+        <maven-ear-plugin.version>2.9</maven-ear-plugin.version>
         <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
         <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
         <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
@@ -90,7 +90,7 @@
         <maven-remote-resources-plugin.version>1.5</maven-remote-resources-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-scm-plugin.version>1.8.1</maven-scm-plugin.version>
-        <maven-shade-plugin.version>2.1</maven-shade-plugin.version>
+        <maven-shade-plugin.version>2.2</maven-shade-plugin.version>
         <maven-site-plugin.version>3.3</maven-site-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
@@ -99,10 +99,10 @@
 
         <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
-        <clirr-maven-plugin.version>2.6</clirr-maven-plugin.version>
+        <clirr-maven-plugin.version>2.6.1</clirr-maven-plugin.version>
         <ditaot-maven-plugin.version>1.0</ditaot-maven-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
-        <findbugs-maven-plugin.version>2.5.2</findbugs-maven-plugin.version>
+        <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
         <license-maven-plugin.version>1.5</license-maven-plugin.version>
         <native-maven-plugin.version>1.0-alpha-7</native-maven-plugin.version>
         <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
@@ -114,9 +114,9 @@
         <com.github.github__site-maven-plugin__version>0.9</com.github.github__site-maven-plugin__version>
 
         <!-- ==== Plugins: All other 3rd party plugins ==== -->
-        <android-maven-plugin.version>3.8.0</android-maven-plugin.version>
+        <android-maven-plugin.version>3.8.1</android-maven-plugin.version>
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
-        <cordova-maven-plugin.version>3.0.0.20131101-M2</cordova-maven-plugin.version>
+        <cordova-maven-plugin.version>3.0.0.20131205-M3</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.14</docbkx-maven-plugin.version>
         <eclipselink-staticweave-maven-plugin.version>1.0.4</eclipselink-staticweave-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
