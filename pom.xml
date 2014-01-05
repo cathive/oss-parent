@@ -158,7 +158,7 @@
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
-        <cxf.version>2.7.7</cxf.version>
+        <cxf.version>2.7.8</cxf.version>
         <!-- EclipseLink JPA Provider
              This version definition changes the version of EclipseLink being used. -->
         <eclipselink.version>2.5.1</eclipselink.version>
@@ -179,13 +179,13 @@
         <jetty.version>9.1.0.v20131115</jetty.version>
         <!-- JGit (http://eclipse.org/jgit/)
              Version definition for JGit core and dependedant libraries-->
-        <jgit.version>3.1.0.201310021548-r</jgit.version>
+        <jgit.version>3.2.0.201312181205-r</jgit.version>
         <!-- Java™ Binding for the OpenAL® API (JOAL)
              This version definition changes the version of JOAL that is being used. -->
-        <joal.version>2.1.2</joal.version>
+        <joal.version>2.1.3</joal.version>
         <!-- Java™ Binding for the OpenGL® API (JOGL)
              This version definition changes the version of JOGL that is being used. -->
-        <jogl.version>2.1.2</jogl.version>
+        <jogl.version>2.1.3</jogl.version>
         <!-- JInput.
              This version definition changes the versions of all JInput components -->
         <jinput.version>2.0.5</jinput.version>
@@ -207,8 +207,8 @@
         <slf4j.version>1.7.5</slf4j.version>
         <!-- Spring Framework and Libraries.
              This version definition changes the version of all our Spring components. -->
-        <spring.version>3.2.5.RELEASE</spring.version>
-        <spring-security.version>3.1.4.RELEASE</spring-security.version>
+        <spring.version>4.0.0.RELEASE</spring.version>
+        <spring-security.version>3.2.0.RELEASE</spring-security.version>
         <!-- TestNG
              This version definition changes the currently used version of TestNG -->
         <testng.version>6.8.7</testng.version>
