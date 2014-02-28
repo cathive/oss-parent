@@ -3,3 +3,4 @@ jdk:
     - openjdk7
     - oraclejdk7
 install: mvn package
+threadsafe: yes
