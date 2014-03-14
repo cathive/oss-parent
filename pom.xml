@@ -134,8 +134,7 @@
         <tomcat-maven-plugin.version>2.2</tomcat-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
-        <plexus-compiler-javac.version>2.3</plexus-compiler-javac.version>
-        <plexus-compiler-javac-errorprone.version>2.3</plexus-compiler-javac-errorprone.version>
+        <plexus-compilers.version>2.3</plexus-compilers.version>
 
         <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
         <doxia-modules.version>1.5</doxia-modules.version>
@@ -323,7 +322,7 @@
                             <arg>-XDignore.symbol.file</arg>
                             <arg>-Xlint:unchecked</arg>
                         </compilerArgs>
-                        <compilerId>javac-with-errorprone</compilerId>
+                        <compilerId>javac</compilerId>
                         <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
                         <forceJavacCompilerUse>true</forceJavacCompilerUse>
                         <source>${maven.compiler.source}</source>
@@ -333,12 +332,7 @@
                         <dependency>
                             <groupId>org.codehaus.plexus</groupId>
                             <artifactId>plexus-compiler-javac</artifactId>
-                            <version>${plexus-compiler-javac.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.codehaus.plexus</groupId>
-                            <artifactId>plexus-compiler-javac-errorprone</artifactId>
-                            <version>${plexus-compiler-javac-errorprone.version}</version>
+                            <version>${plexus-compilers.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -1786,20 +1780,6 @@
             <build>
                 <pluginManagement>
                     <plugins>
-                        <!--
-                          This configuration makes sure that the m2e Eclipse-maven-compiler-plugin mapping
-                          works flawlessly. We use another compilerId for all other environments to make
-                          sure that the javac-error-prone features are being used.
-                          For Eclipse it doesn't make too much sense, since it uses it's own compiler (ECJ)
-                          and complains loudly about defunct lifecycle-mappings if we change the compilerId.
-                          -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-compiler-plugin</artifactId>
-                            <configuration>
-                                <compilerId>javac</compilerId>
-                            </configuration>
-                        </plugin>
                         <plugin>
                             <groupId>org.eclipse.m2e</groupId>
                             <artifactId>lifecycle-mapping</artifactId>
