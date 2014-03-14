@@ -103,6 +103,7 @@
         <ditaot-maven-plugin.version>1.0</ditaot-maven-plugin.version>
         <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
         <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
+        <jaxb2-maven-plugin.version>1.6</jaxb2-maven-plugin.version>
         <license-maven-plugin.version>1.6</license-maven-plugin.version>
         <native-maven-plugin.version>1.0-alpha-8</native-maven-plugin.version>
         <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
@@ -631,6 +632,11 @@
                             <licenseMerge>Unknown|Unknown license</licenseMerge>
                         </licenseMerges>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jaxb2-maven-plugin</artifactId>
+                    <version>${jaxb2-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
