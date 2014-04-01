@@ -124,7 +124,6 @@
         <docbkx-maven-plugin.version>2.0.15</docbkx-maven-plugin.version>
         <eclipselink-staticweave-maven-plugin.version>1.0.4</eclipselink-staticweave-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
-        <javascript-maven-plugin.version>1.0.13</javascript-maven-plugin.version>
         <jaxws-maven-plugin.version>2.3</jaxws-maven-plugin.version>
         <jsdoc3-maven-plugin.version>1.0.7</jsdoc3-maven-plugin.version>
         <lesscss-maven-plugin.version>1.3.3.1</lesscss-maven-plugin.version>
@@ -172,6 +171,9 @@
              This version definition changes the version of Google Guice as well as the version of
              all of the official additions that have been made available. -->
         <guice.version>3.0</guice.version>
+        <!-- Hamcrest
+             Defines the version of hamcrest to be used. -->
+        <hamcrest.version>1.3</hamcrest.version>
         <!-- JavaEE configuration
              This version definition changes the version of JavaEE dependencies to be used
              (can be either 6.0 or 7.0). -->
@@ -204,6 +206,9 @@
         <!-- Lombok
              This version definition changes the version of Lombok to be used. -->
         <lombok.version>1.12.6</lombok.version>
+        <!-- Google Protocol Buffers
+             This version definition changes the version of the protobuf implementation for Java to be used. -->
+        <protobuf.version>2.5.0</protobuf.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
@@ -804,15 +809,6 @@
                     </dependencies>
                 </plugin>
                 <plugin>
-                    <groupId>de.ailis.maven.plugins</groupId>
-                    <artifactId>javascript-maven-plugin</artifactId>
-                    <version>${javascript-maven-plugin.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <incremental>true</incremental>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <groupId>org.jvnet.jax-ws-commons</groupId>
                     <artifactId>jaxws-maven-plugin</artifactId>
                     <version>${jaxws-maven-plugin.version}</version>
@@ -832,6 +828,13 @@
                     <groupId>com.github.igor-petruk.protobuf</groupId>
                     <artifactId>protobuf-maven-plugin</artifactId>
                     <version>${protobuf-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.google.protobuf</groupId>
+                            <artifactId>protobuf-java</artifactId>
+                            <version>${protobuf.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.jasig.maven</groupId>
@@ -1239,6 +1242,43 @@
                 <version>${guice.version}</version>
                 <type>jar</type>
             </dependency>
+            <!-- ==== Hamcrest ==== -->
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-api</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-core</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-generator</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-integration</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-library</artifactId>
+                <version>${hamcrest.version}</version>
+                <type>jar</type>
+            </dependency>
             <!-- ==== JavaEE ==== -->
             <dependency>
                 <groupId>javax</groupId>
@@ -1470,6 +1510,13 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-utils</artifactId>
                 <version>${lombok.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Google Protocol Buffers ==== -->
+            <dependency>
+                <groupId>org.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Simple Logging Facade For Java (SLF4J) ==== -->
@@ -2009,24 +2056,6 @@
                             <configuration>
                                 <lifecycleMappingMetadata>
                                     <pluginExecutions>
-                                        <pluginExecution>
-                                            <pluginExecutionFilter>
-                                                <groupId>de.ailis.maven.plugins</groupId>
-                                                <artifactId>javascript-maven-plugin</artifactId>
-                                                <versionRange>[1.0.0,)</versionRange>
-                                                <goals>
-                                                    <goal>compile</goal>
-                                                    <goal>resources</goal>
-                                                    <goal>demo</goal>
-                                                </goals>
-                                            </pluginExecutionFilter>
-                                            <action>
-                                                <execute>
-                                                    <runOnConfiguration>false</runOnConfiguration>
-                                                    <runOnIncremental>true</runOnIncremental>
-                                                </execute>
-                                            </action>
-                                        </pluginExecution>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
                                                 <groupId>com.samaxes.maven</groupId>
