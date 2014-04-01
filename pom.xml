@@ -204,6 +204,9 @@
         <!-- Lombok
              This version definition changes the version of Lombok to be used. -->
         <lombok.version>1.12.6</lombok.version>
+        <!-- Mockito
+             Version of Mockito to be used. -->
+        <mockito.version>1.9.5</mockito.version>
         <!-- Google Protocol Buffers
              This version definition changes the version of the protobuf implementation for Java to be used. -->
         <protobuf.version>2.5.0</protobuf.version>
@@ -1508,6 +1511,19 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-utils</artifactId>
                 <version>${lombok.version}</version>
+                <type>jar</type>
+            </dependency>
+            <!-- ==== Mockito ==== -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== Google Protocol Buffers ==== -->
