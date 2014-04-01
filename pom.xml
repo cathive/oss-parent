@@ -1528,7 +1528,7 @@
             </dependency>
             <!-- ==== Google Protocol Buffers ==== -->
             <dependency>
-                <groupId>org.google.protobuf</groupId>
+                <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf.version}</version>
                 <type>jar</type>
