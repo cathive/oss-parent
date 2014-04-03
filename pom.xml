@@ -132,6 +132,7 @@
         <taglib-maven-plugin.version>2.4</taglib-maven-plugin.version>
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
         <tomcat-maven-plugin.version>2.2</tomcat-maven-plugin.version>
+        <wildfly-maven-plugin.version>1.0.1.Final</wildfly-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
         <plexus-compilers.version>2.3</plexus-compilers.version>
@@ -893,6 +894,11 @@
                     <groupId>org.jboss.tattletale</groupId>
                     <artifactId>tattletale-maven</artifactId>
                     <version>${tattletale-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>${wildfly-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
