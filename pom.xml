@@ -132,6 +132,7 @@
         <taglib-maven-plugin.version>2.4</taglib-maven-plugin.version>
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
         <tomcat-maven-plugin.version>2.2</tomcat-maven-plugin.version>
+        <wadl-maven-plugin.version>1.1.1</wadl-maven-plugin.version>
         <wildfly-maven-plugin.version>1.0.1.Final</wildfly-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
@@ -695,6 +696,11 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-wadl2java-plugin</artifactId>
+                    <version>${cxf.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-wsdl-validator-plugin</artifactId>
                     <version>${cxf.version}</version>
                 </plugin>
@@ -894,6 +900,11 @@
                     <groupId>org.jboss.tattletale</groupId>
                     <artifactId>tattletale-maven</artifactId>
                     <version>${tattletale-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jvnet.ws.wadl</groupId>
+                    <artifactId>wadl-maven-plugin</artifactId>
+                    <version>${wadl-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.wildfly.plugins</groupId>
