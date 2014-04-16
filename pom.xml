@@ -137,7 +137,10 @@
         <wildfly-maven-plugin.version>1.0.1.Final</wildfly-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
-        <plexus-compilers.version>2.3</plexus-compilers.version>
+	<plexus-compilers.version>2.3</plexus-compilers.version>
+
+	<!-- ==== Plugins: Add-ons for the maven-enforcer-plugin ==== -->
+	<codehaus-extra-enforcer-rules.version>1.0-beta-2</codehaus-extra-enforcer-rules.version>
 
         <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
         <doxia-modules.version>1.5</doxia-modules.version>
