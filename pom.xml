@@ -64,7 +64,7 @@
         <maven-archetype-plugin.version>2.2</maven-archetype-plugin.version>
         <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
         <maven-changes-plugin.version>2.10</maven-changes-plugin.version>
-        <maven-checkstyle-plugin.version>2.12</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>2.12.1</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
@@ -82,7 +82,7 @@
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
         <maven-pdf-plugin.version>1.2</maven-pdf-plugin.version>
-        <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
+        <maven-plugin-plugin.version>3.3</maven-plugin-plugin.version>
         <maven-pmd-plugin.version>3.1</maven-pmd-plugin.version>
         <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
         <maven-rar-plugin.version>2.3</maven-rar-plugin.version>
@@ -90,21 +90,20 @@
         <maven-remote-resources-plugin.version>1.5</maven-remote-resources-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
         <maven-scm-plugin.version>1.9</maven-scm-plugin.version>
-        <maven-shade-plugin.version>2.2</maven-shade-plugin.version>
+        <maven-shade-plugin.version>2.3</maven-shade-plugin.version>
         <maven-site-plugin.version>3.3</maven-site-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
 
         <!-- ==== Plugins: Codehaus plugins (Group ID: org.codehaus.mojo) ==== -->
-        <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+        <build-helper-maven-plugin.version>1.9</build-helper-maven-plugin.version>
         <clirr-maven-plugin.version>2.6.1</clirr-maven-plugin.version>
         <ditaot-maven-plugin.version>1.0</ditaot-maven-plugin.version>
-        <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
-
-        <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
+        <exec-maven-plugin.version>1.3.1</exec-maven-plugin.version>
+        <findbugs-maven-plugin.version>2.5.4</findbugs-maven-plugin.version>
         <jaxb2-maven-plugin.version>1.6</jaxb2-maven-plugin.version>
-        <license-maven-plugin.version>1.6</license-maven-plugin.version>
+        <license-maven-plugin.version>1.7</license-maven-plugin.version>
         <native-maven-plugin.version>1.0-alpha-8</native-maven-plugin.version>
         <properties-maven-plugin.version>1.0-alpha-2</properties-maven-plugin.version>
         <sql-maven-plugin.version>1.5</sql-maven-plugin.version>
@@ -116,16 +115,16 @@
         <com.github.github__site-maven-plugin__version>0.9</com.github.github__site-maven-plugin__version>
 
         <!-- ==== Plugins: All other 3rd party plugins ==== -->
-        <android-maven-plugin.version>3.9.0-rc.1</android-maven-plugin.version>
+        <android-maven-plugin.version>3.9.0-rc.2</android-maven-plugin.version>
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20140325-M5</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.15</docbkx-maven-plugin.version>
         <eclipselink-staticweave-maven-plugin.version>1.0.4</eclipselink-staticweave-maven-plugin.version>
-        <grunt-maven-plugin.version>1.2.2</grunt-maven-plugin.version>
+        <grunt-maven-plugin.version>1.3.1</grunt-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
         <jaxws-maven-plugin.version>2.3</jaxws-maven-plugin.version>
         <jsdoc3-maven-plugin.version>1.0.7</jsdoc3-maven-plugin.version>
-        <lesscss-maven-plugin.version>1.3.3.1</lesscss-maven-plugin.version>
+        <lesscss-maven-plugin.version>1.7.0.1.1</lesscss-maven-plugin.version>
         <lombok-maven-plugin.version>1.12.6.0</lombok-maven-plugin.version>
         <minify-maven-plugin.version>1.7.2</minify-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.3</protobuf-maven-plugin.version>
@@ -137,10 +136,10 @@
         <wildfly-maven-plugin.version>1.0.1.Final</wildfly-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
-	<plexus-compilers.version>2.3</plexus-compilers.version>
+        <plexus-compilers.version>2.3</plexus-compilers.version>
 
-	<!-- ==== Plugins: Add-ons for the maven-enforcer-plugin ==== -->
-	<codehaus-extra-enforcer-rules.version>1.0-beta-2</codehaus-extra-enforcer-rules.version>
+        <!-- ==== Plugins: Add-ons for the maven-enforcer-plugin ==== -->
+        <codehaus-extra-enforcer-rules.version>1.0-beta-2</codehaus-extra-enforcer-rules.version>
 
         <!-- ==== Plugins: Add-ons for official maven plugins to work as desired ==== -->
         <doxia-modules.version>1.5</doxia-modules.version>
@@ -164,13 +163,13 @@
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
-        <cxf.version>2.7.10</cxf.version>
+        <cxf.version>3.0.1</cxf.version>
         <!-- EclipseLink JPA Provider
              This version definition changes the version of EclipseLink being used. -->
         <eclipselink.version>2.5.1</eclipselink.version>
         <!-- Google Commons (Guava)
           This version definition chnages the Guava version being used. -->
-        <guava.version>16.0.1</guava.version>
+        <guava.version>18.0</guava.version>
         <!-- Google Guice IoC Container and add-ons
              This version definition changes the version of Google Guice as well as the version of
              all of the official additions that have been made available. -->
@@ -179,7 +178,7 @@
              Defines the version of hamcrest to be used. -->
         <hamcrest.version>1.3</hamcrest.version>
         <!-- Jackson, https://github.com/FasterXML/jackson -->
-        <jackson.version>2.2.3</jackson.version>
+        <jackson2.version>2.4.2</jackson2.version>
         <!-- JavaEE configuration
              This version definition changes the version of JavaEE dependencies to be used
              (can be either 6.0 or 7.0). -->
@@ -187,19 +186,19 @@
         <!-- Jetty Servlet Container.
              This version definition changes the version of the jetty-maven-plugin as well as the versions of
              all Jetty components and dependencies. -->
-        <jetty.version>9.1.3.v20140225</jetty.version>
+        <jetty.version>9.2.3.v20140905</jetty.version>
         <!-- JGit (http://eclipse.org/jgit/)
              Version definition for JGit core and dependedant libraries-->
         <jgit.version>3.3.1.201403241930-r</jgit.version>
         <!-- Java™ Binding for the OpenAL® API (JOAL)
              This version definition changes the version of JOAL that is being used. -->
-        <joal.version>2.1.5-01</joal.version>
+        <joal.version>2.2.1</joal.version>
         <!-- Java™ Binding for the OpenGL® API (JOGL)
              This version definition changes the version of JOGL that is being used. -->
-        <jogl.version>2.1.5-01</jogl.version>
+        <jogl.version>2.2.1</jogl.version>
         <!-- JInput.
              This version definition changes the versions of all JInput components -->
-        <jinput.version>2.0.5</jinput.version>
+        <jinput.version>2.0.6</jinput.version>
         <!-- Java Native Access (JNA).
              This version definition changes the version of all JNA dependencies. -->
         <jna.version>4.1.0</jna.version>
@@ -211,30 +210,30 @@
         <logback.version>1.1.2</logback.version>
         <!-- Lombok
              This version definition changes the version of Lombok to be used. -->
-        <lombok.version>1.12.6</lombok.version>
+        <lombok.version>1.14.8</lombok.version>
         <!-- This version definition controls the version of the semver enforcer rule
              and the semver API package to be used. -->
-        <semver.version>0.9.22</semver.version>
+        <semver.version>0.9.28</semver.version>
         <!-- Mockito
              Version of Mockito to be used. -->
         <mockito.version>1.9.5</mockito.version>
         <!-- Google Protocol Buffers
              This version definition changes the version of the protobuf implementation for Java to be used. -->
-        <protobuf.version>2.5.0</protobuf.version>
+        <protobuf.version>2.6.0</protobuf.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
         <slf4j.version>1.7.7</slf4j.version>
         <!-- Spring Framework and Libraries.
              This version definition changes the version of all our Spring components. -->
-        <spring.version>4.0.3.RELEASE</spring.version>
-        <spring-security.version>3.2.3.RELEASE</spring-security.version>
+        <spring.version>4.1.0.RELEASE</spring.version>
+        <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <!-- TestNG
              This version definition changes the currently used version of TestNG -->
         <testng.version>6.8.8</testng.version>
         <!-- Apache Tomcat
              Version definition of the Apache Tomcat app server to be used. -->
-        <tomcat.version>8.0.5</tomcat.version>
+        <tomcat.version>8.0.12</tomcat.version>
         <!-- Wildfly
              Version definition of the Wildfly app server and it's components to be used. -->
         <wildfly.version>8.0.0.Final</wildfly.version>
@@ -268,7 +267,7 @@
     </scm>
 
     <prerequisites>
-        <maven>3.2.1</maven>
+        <maven>3.2.3</maven>
     </prerequisites>
 
     <build>
@@ -295,7 +294,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-acr-plugin</artifactId>
-		    <version>${maven-acr-plugin.version}</version>
+                    <version>${maven-acr-plugin.version}</version>
                     <extensions>true</extensions>
                 </plugin>
                 <plugin>
@@ -1327,173 +1326,173 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- Jackson data formats -->
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-avro</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-cbor</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-csv</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-smile</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- Jackson data types -->
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-guava</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-hibernate3</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-hibernate4</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-hppc</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-joda</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-json-org</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr353</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- Jackson JAX-RS components -->
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-base</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-cbor-provider</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-json-provider</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-smile-provider</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-xml-provider</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- Jackson modules -->
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-afterburner</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-guice</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-jaxb-annotations</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-jsonSchema</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-mrbean</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-paranamer</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson2.version}</version>
                 <type>jar</type>
             </dependency>
             <!-- ==== JavaEE ==== -->
