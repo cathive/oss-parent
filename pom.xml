@@ -115,14 +115,15 @@
         <com.github.github__site-maven-plugin__version>0.9</com.github.github__site-maven-plugin__version>
 
         <!-- ==== Plugins: All other 3rd party plugins ==== -->
-        <android-maven-plugin.version>3.9.0-rc.2</android-maven-plugin.version>
+        <android-maven-plugin.version>4.0.0</android-maven-plugin.version>
+        <android-ndk-maven-plugin.version>0.1.0</android-ndk-maven-plugin.version>
         <bundle-maven-plugin.version>2.4.0</bundle-maven-plugin.version>
         <cordova-maven-plugin.version>3.0.0.20140325-M5</cordova-maven-plugin.version>
         <docbkx-maven-plugin.version>2.0.15</docbkx-maven-plugin.version>
         <eclipselink-staticweave-maven-plugin.version>1.0.4</eclipselink-staticweave-maven-plugin.version>
-        <grunt-maven-plugin.version>1.3.1</grunt-maven-plugin.version>
+        <grunt-maven-plugin.version>1.4.1</grunt-maven-plugin.version>
         <javafx-maven-plugin.version>2.0</javafx-maven-plugin.version>
-        <jaxws-maven-plugin.version>2.3</jaxws-maven-plugin.version>
+        <jaxws-maven-plugin.version>2.3.1-b20141205.0945</jaxws-maven-plugin.version>
         <jsdoc3-maven-plugin.version>1.0.7</jsdoc3-maven-plugin.version>
         <lesscss-maven-plugin.version>1.7.0.1.1</lesscss-maven-plugin.version>
         <lombok-maven-plugin.version>1.12.6.0</lombok-maven-plugin.version>
@@ -133,7 +134,7 @@
         <tattletale-maven-plugin.version>1.2.0.Beta2</tattletale-maven-plugin.version>
         <tomcat-maven-plugin.version>2.2</tomcat-maven-plugin.version>
         <wadl-maven-plugin.version>1.1.1</wadl-maven-plugin.version>
-        <wildfly-maven-plugin.version>1.0.1.Final</wildfly-maven-plugin.version>
+        <wildfly-maven-plugin.version>1.0.2.Final</wildfly-maven-plugin.version>
 
         <!-- ==== Plugins: Plexus components for the Maven compiler plugin ==== -->
         <plexus-compilers.version>2.3</plexus-compilers.version>
@@ -163,10 +164,10 @@
         <!-- Apache CXF.
              This version definition changes the version of the plugin being used as well as the versions of all
              components that are part of CXF. -->
-        <cxf.version>3.0.1</cxf.version>
+        <cxf.version>3.0.3</cxf.version>
         <!-- EclipseLink JPA Provider
              This version definition changes the version of EclipseLink being used. -->
-        <eclipselink.version>2.5.1</eclipselink.version>
+        <eclipselink.version>2.5.2</eclipselink.version>
         <!-- Google Commons (Guava)
           This version definition chnages the Guava version being used. -->
         <guava.version>18.0</guava.version>
@@ -178,7 +179,7 @@
              Defines the version of hamcrest to be used. -->
         <hamcrest.version>1.3</hamcrest.version>
         <!-- Jackson, https://github.com/FasterXML/jackson -->
-        <jackson2.version>2.4.2</jackson2.version>
+        <jackson2.version>2.4.4</jackson2.version>
         <!-- JavaEE configuration
              This version definition changes the version of JavaEE dependencies to be used
              (can be either 6.0 or 7.0). -->
@@ -189,22 +190,24 @@
         <jetty.version>9.2.3.v20140905</jetty.version>
         <!-- JGit (http://eclipse.org/jgit/)
              Version definition for JGit core and dependedant libraries-->
-        <jgit.version>3.3.1.201403241930-r</jgit.version>
+        <jgit.version>3.5.3.201412180710-r</jgit.version>
         <!-- Java™ Binding for the OpenAL® API (JOAL)
              This version definition changes the version of JOAL that is being used. -->
-        <joal.version>2.2.1</joal.version>
+        <joal.version>2.2.4</joal.version>
         <!-- Java™ Binding for the OpenGL® API (JOGL)
              This version definition changes the version of JOGL that is being used. -->
-        <jogl.version>2.2.1</jogl.version>
+        <jogl.version>2.2.4</jogl.version>
         <!-- JInput.
              This version definition changes the versions of all JInput components -->
         <jinput.version>2.0.6</jinput.version>
         <!-- Java Native Access (JNA).
              This version definition changes the version of all JNA dependencies. -->
         <jna.version>4.1.0</jna.version>
+        <!-- JNAerator, https://code.google.com/p/jnaerator/ -->
+        <jnaerator.version>0.11</jnaerator.version>
         <!-- JUnit
              This version definition changes the version of JUnit that is being used. -->
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <!-- Logback
              This version definition changes the version of Logback to be included. -->
         <logback.version>1.1.2</logback.version>
@@ -213,30 +216,30 @@
         <lombok.version>1.14.8</lombok.version>
         <!-- This version definition controls the version of the semver enforcer rule
              and the semver API package to be used. -->
-        <semver.version>0.9.28</semver.version>
+        <semver.version>0.9.33</semver.version>
         <!-- Mockito
              Version of Mockito to be used. -->
-        <mockito.version>1.9.5</mockito.version>
+        <mockito.version>1.10.17</mockito.version>
         <!-- Google Protocol Buffers
              This version definition changes the version of the protobuf implementation for Java to be used. -->
-        <protobuf.version>2.6.0</protobuf.version>
+        <protobuf.version>2.6.1</protobuf.version>
         <!-- Simple Logging Facade For Java (SLF4J).
              This version definition changes the version of the API of SLF4J being used as well as the version of all
              the sources and sinks, to make sure that everything stays compatible. -->
-        <slf4j.version>1.7.7</slf4j.version>
+        <slf4j.version>1.7.9</slf4j.version>
         <!-- Spring Framework and Libraries.
              This version definition changes the version of all our Spring components. -->
-        <spring.version>4.1.0.RELEASE</spring.version>
+        <spring.version>4.1.3.RELEASE</spring.version>
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <!-- TestNG
              This version definition changes the currently used version of TestNG -->
-        <testng.version>6.8.8</testng.version>
+        <testng.version>6.8.13</testng.version>
         <!-- Apache Tomcat
              Version definition of the Apache Tomcat app server to be used. -->
-        <tomcat.version>8.0.12</tomcat.version>
+        <tomcat.version>8.0.15</tomcat.version>
         <!-- Wildfly
              Version definition of the Wildfly app server and it's components to be used. -->
-        <wildfly.version>8.0.0.Final</wildfly.version>
+        <wildfly.version>8.2.0.Final</wildfly.version>
 
     </properties>
 
@@ -847,6 +850,14 @@
                     <version>${jaxws-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>com.nativelibs4java</groupId>
+                    <artifactId>maven-jnaerator-plugin</artifactId>
+                    <version>${jnaerator.version}</version>
+                    <configuration>
+                        <javaOutputDirectory>${project.build.directory}/generated-sources/jnaerator</javaOutputDirectory>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>com.agilejava.docbkx</groupId>
                     <artifactId>docbkx-maven-plugin</artifactId>
                     <version>${docbkx-maven-plugin.version}</version>
@@ -890,9 +901,15 @@
                     <version>${lombok-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <groupId>com.simpligility.maven.plugins</groupId>
                     <artifactId>android-maven-plugin</artifactId>
                     <version>${android-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>com.simpligility.maven.plugins</groupId>
+                    <artifactId>android-ndk-maven-plugin</artifactId>
+                    <version>${android-ndk-maven-plugin.version}</version>
                     <extensions>true</extensions>
                 </plugin>
                 <plugin>
@@ -1681,13 +1698,37 @@
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna</artifactId>
                 <version>${jna.version}</version>
-                <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna-platform</artifactId>
                 <version>${jna.version}</version>
-                <type>jar</type>
+            </dependency>
+            <!-- ==== JNAerator ==== -->
+            <dependency>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>jna-jnaerator</artifactId>
+                <version>${jnaerator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>jnaerator</artifactId>
+                <version>${jnaerator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>jnaerator-parser</artifactId>
+                <version>${jnaerator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>jnaerator-rococoa-runtime</artifactId>
+                <version>${jnaerator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nativelibs4java</groupId>
+                <artifactId>jnaerator-runtime</artifactId>
+                <version>${jnaerator.version}</version>
             </dependency>
             <!-- ==== JUnit ==== -->
             <dependency>
