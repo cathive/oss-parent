@@ -220,6 +220,8 @@
         <!-- Mockito
              Version of Mockito to be used. -->
         <mockito.version>1.10.17</mockito.version>
+        <!-- OSGi (Open Service Gateway initiative) specification, http://osgi.org/ -->
+        <osgi.version>6.0.0</osgi.version>
         <!-- Google Protocol Buffers
              This version definition changes the version of the protobuf implementation for Java to be used. -->
         <protobuf.version>2.6.1</protobuf.version>
@@ -1788,6 +1790,17 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito.version}</version>
                 <type>jar</type>
+            </dependency>
+            <!-- ==== OSGi (Open Service Gateway initiative) specification / API ==== -->
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>${osgi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.annotation</artifactId>
+                <version>${osgi.version}</version>
             </dependency>
             <!-- ==== Google Protocol Buffers ==== -->
             <dependency>
