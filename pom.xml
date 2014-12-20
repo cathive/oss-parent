@@ -22,7 +22,7 @@
     <groupId>com.cathive</groupId>
     <artifactId>oss-parent</artifactId>
     <packaging>pom</packaging>
-    <version>10-SNAPSHOT</version>
+    <version>10</version>
     <name>Cat Hive Open Source Software</name>
     <description>Open Source Software created and published by The Cat Hive Developers</description>
     <url>http://www.github.com/cathive/oss-parent/</url>
@@ -268,7 +268,7 @@
         <connection>scm:git:https://github.com/cathive/oss-parent.git</connection>
         <developerConnection>scm:git:git@github.com:cathive/oss-parent.git</developerConnection>
         <url>https://github.com/cathive/oss-parent/</url>
-        <tag>master</tag>
+        <tag>v10</tag>
     </scm>
 
     <prerequisites>
