@@ -1,13 +1,13 @@
-bin/
-out/
-target/
+/bin/
+/out/
+/target/
 
 .idea/
 *.iml
 
 .project
 .classpath
-.settings/
+/.settings/
 
 *~
 *.bak
